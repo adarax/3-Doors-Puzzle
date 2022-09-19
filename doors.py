@@ -37,7 +37,6 @@ def game(): # For user input
     won = False
 
     if switched:
-        switched = True
         print("You chose to switch to door " + str(remainingDoor) + ".")
         if remainingDoor == prizeIndex + 1:
             won = True
@@ -71,7 +70,6 @@ def game(choice, switch): # For automated testing
     won = False
 
     if switched:
-        switched = True
         if remainingDoor == prizeIndex + 1:
             won = True
     else:
