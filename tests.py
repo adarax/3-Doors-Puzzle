@@ -10,7 +10,7 @@ switchedWins = 0
 switchedLosses = 0
 
 # Specify number of iterations
-iterations = 10000000
+iterations = 100000
 
 for i in range(iterations):
     progress = ((i + 1) / iterations) * 100

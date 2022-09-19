@@ -79,3 +79,6 @@ def game(choice, switch): # For automated testing
             won = True
 
     return [switched, won]
+
+# For user input
+# game()
