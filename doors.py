@@ -37,7 +37,6 @@ def game(): # For user input
     won = False
 
     if switched:
-        switched = True
         print("You chose to switch to door " + str(remainingDoor) + ".")
         if remainingDoor == prizeIndex + 1:
             won = True
@@ -53,7 +52,7 @@ def game(): # For user input
 
     return [switched, won]
 
-def game(choice, switch): # For automated testing
+def game(choice): # For automated testing
     doors = [1, 2, 3]
     prizeIndex = random.randint(0, 2)
 
@@ -63,19 +62,14 @@ def game(choice, switch): # For automated testing
         if i is not firstChoice and i is not doors[prizeIndex]:
             doors.remove(i)
             break    
-
+    
     doors.remove(firstChoice)
+
+    # Remaining door is the door that can be switched to
     remainingDoor = doors[0]
 
-    switched = switch
-    won = False
+    # Check for win against remaining door
+    # If win is true, this means that switching doors won the game
+    won = (remainingDoor == prizeIndex + 1)
 
-    if switched:
-        switched = True
-        if remainingDoor == prizeIndex + 1:
-            won = True
-    else:
-        if firstChoice == prizeIndex + 1:
-            won = True
-
-    return [switched, won]
+    return won
