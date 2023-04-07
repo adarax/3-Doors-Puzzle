@@ -22,7 +22,7 @@ for i in range(iterations):
         print("Progress: " + str(round(progress, 2)) + "%")
     
     switchDoors = False
-    result = doors.game(random.randint(1, 3), switchDoors)  # Parameters are (door # chosen, switch)
+    result = doors.game(random.randint(1, 3), switchDoors)  # Parameters are (door number chosen, switch)
     
     if result[1]:
         switchedWins += 1
